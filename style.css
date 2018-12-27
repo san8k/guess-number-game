@@ -1,0 +1,255 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background: #06a8a8;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.header__title {
+    margin-bottom: 50px;
+
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 100px;
+    color: orange;
+    text-shadow: 1px 1px 2px #006363, -1px -1px 2px #006363;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.main::after {
+    content:'';
+    width:100%;
+    order:0;
+  }
+
+.answers-section__invent {
+    margin: 0 auto;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+
+    color: white;
+    text-shadow: 1px 1px 0 orange;
+}
+
+.answers-section__message-container {
+    display: flex;
+
+    width: 100%;
+    margin: 0 auto;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+
+    color: white;
+    text-shadow: 1px 1px 0 orange;
+}
+
+.answers-section__message {
+    margin: 20px auto;
+}
+
+.main__description {
+    margin: 0 auto;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+
+    color: white;
+    text-shadow: 1px 1px 0 orange;
+}
+
+.main__button {
+    order: 1;
+
+    margin: 0 auto;
+    margin-top: 40px;
+
+    padding: 10px 15px;
+
+    background: white;
+
+    font-family: 'Lobster', cursive;
+    font-size: 32px;
+    color: orange;
+    text-shadow: 1px 1px 2px #006363, -1px -1px 2px #006363;
+
+    border: 2px solid orange;
+    border-radius: 25px;
+
+}
+
+.answers-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 750px;
+    margin: 0 auto;
+}
+
+.answers-section__answers-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.answers-section__answer {
+    width: 60px;
+    height: 60px;
+    
+    background: white;
+    border: 3px solid orange;
+    border-radius: 50%;
+
+    color: orange;
+
+}
+
+.answers-section__answer:hover {
+    transform: scale(1.2);
+}
+
+.answers-section__answer-number {
+    font-family: 'Lobster', cursive;
+    font-size: 22px;
+    margin: 50%;
+    transform: translate(-5px, -50%);
+}
+
+.answers-section__answer:last-child > .answers-section__answer-number {
+    transform: translate(-11px, -50%);
+}
+
+.answers-section__answer--false {
+    position: relative;
+
+    border-color: rgb(248, 6, 67);
+    background: rgb(245, 132, 79);
+}
+
+.answers-section__answer--false::before,
+.answers-section__answer--false::after {
+    position: absolute;
+    
+    content: "";
+
+    top: 25px;
+    left: 2px;
+
+    width: 50px;
+    height: 3px;
+
+    background-color: rgb(248, 6, 67);
+
+    z-index: 1;
+}
+
+.answers-section__answer--false::before {
+    transform: rotate(45deg);
+}
+
+.answers-section__answer--false::after {
+    transform: rotate(-45deg);
+}
+
+.answers-section__answer--true {
+    border-color: rgb(25, 121, 247);
+    background: rgb(134, 247, 159);
+}
+
+.answers-section__restart {
+    margin-top: 0;
+}
+
+.from-hell {
+    animation-name: from-hell;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.false-answer {
+    animation-name: shake;
+    animation-duration: 0.5s;
+}
+
+.true-answer {
+    animation-name: scale;
+    animation-duration: 0.5s;
+}
+
+.opacity-out {
+    animation-name: opacity-out;
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0)
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px)
+    }
+
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px)
+    }
+  }
+
+@keyframes scale {
+    0%, 100% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(2)
+    }
+}  
+
+@keyframes opacity-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes from-hell {
+    0% {
+        transform: translateY(3000px);
+    }
+
+    70% {
+        transform: translateY(-30px);
+    }
+
+    90% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
